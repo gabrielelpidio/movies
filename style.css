@@ -1,0 +1,394 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?vckwf');
+    src:  url('fonts/icomoon.eot?vckwf#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?vckwf') format('truetype'),
+      url('fonts/icomoon.woff?vckwf') format('woff'),
+      url('fonts/icomoon.svg?vckwf#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e905";
+  }
+  .icon-search:before {
+    content: "\e904";
+  }
+  .icon-config:before {
+    content: "\e903";
+  }
+  .icon-like:before {
+    content: "\e902";
+  }
+  .icon-trending:before {
+    content: "\e900";
+  }
+  .icon-flame:before {
+    content: "\e900";
+  }
+  .icon-hot:before {
+    content: "\e900";
+  }
+  .icon-popular:before {
+    content: "\e900";
+  }
+  .icon-home:before {
+    content: "\e901";
+  }
+  .icon-house:before {
+    content: "\e901";
+  }
+
+/* Icon Config */
+
+body{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.burger-button{
+    background: rgba(252, 83, 90, .7);
+    color: white;
+    font-size: 1.3em;
+    width:40px;
+    height:40px;   
+    border-radius: 50%;
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 15px;
+}
+
+
+.container{
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 7% 1fr;
+    grid-template-areas: "header header"
+    "sidebar movies";                  
+    justify-content: space-between;                      
+}
+
+
+.header{
+    grid-area: header;
+    background: white;
+    width: 100%;
+    height: 70px;
+    display: grid;
+    grid-template-rows: 70px;
+    grid-template-columns: 25% 1fr 30%;
+    grid-template-areas: "logo search profile";
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0px 1px 20px 1px grey;
+}
+
+
+.header-logo{
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+.header-logo img{
+    height: 45px;
+    display: inline-block;
+    justify-self: start;
+}
+
+.header-title{
+    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    display: inline-block;
+}
+
+.icon-search{
+    display: flex;
+    display: none;
+    font-size: 1.3em
+}
+
+.header-search{
+    width: 100%;
+    height:60% ;
+}
+
+
+.header-search input{
+    grid-area: search;
+    display: flex;
+    width: 100%;
+    padding: 0 5px;
+    height: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    
+}
+
+.profile-name{
+    display: inline-block;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+.profile-wrapper{
+    display: flex;
+    grid-area: profile;
+    align-items: center;
+}
+
+.profile{
+    font-size: 45px;
+    width: 1em; 
+    height: 1em;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.profile img{
+    width: 1em;
+}
+
+
+.sidebar{
+    grid-area: sidebar;
+    font-size: 40px;
+    background: #F9726C;
+    color: white;
+}
+.sidebar-container{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-content: space-evenly;
+    grid-template-areas: "home"
+                         "trending"
+                         "like"
+                         "settings"
+                         ".";
+    text-align:  center;
+}
+
+.home{
+    grid-area: home;
+    align-self: center;
+}
+.trending{
+    grid-area: trending;
+    align-self: center;
+}
+.like{
+    grid-area: like;
+    align-self: center;
+}
+.settings{
+    grid-area: settings;
+    align-self: center;
+}
+
+.sidebar p{
+    margin: 0;
+    font-size: 16px;
+}
+
+.movies{
+    grid-area: movies;
+}
+
+
+.movies-categories{
+    margin: 0.83em 1.8em;
+}
+
+.movies-container{
+    margin: 20px 0;
+    display: grid;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    grid-template-columns: repeat(3, minmax(10%, 30%));
+}
+
+.movies-box{
+    display: block;
+    position: relative;
+}
+
+.movies-box img{
+    width: 100%
+}
+
+.movies-description{
+    font-size: 16px;
+    position: absolute;
+    color: white;
+    display: inline-block;
+    background: rgba(252, 83, 90, .7);
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+.movie-title{
+    font-size: 1.5em;
+    margin: 0;
+    padding: 5px 10px
+}
+
+.movie-synopsis{
+    font-size: 1em;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+@media screen and (max-width: 1024px){
+    .sidebar-container{
+        align-content: start;
+        grid-row-gap: 50px;
+        grid-template-areas: "."
+                             "home"
+                             "trending"
+                             "like"
+                             "settings";
+    }
+
+    .container{
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 15% 1fr;
+    grid-template-areas: "header header"
+                         "sidebar movies"; 
+    }
+    .movies-container{
+        grid-template-columns: repeat(2, 300px);
+        grid-row-gap: 20px
+    }
+    .movies-description{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .sidebar{
+        position: fixed;
+        background: rgb(252, 83, 90);
+        z-index: 3;
+        top: 0;
+        bottom: 0;
+        left: -20vw;
+        width: 20vw;
+        /* height: 100vh; */
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        display: flex;
+    }
+    .profile-wrapper{
+        display: block;
+    }
+
+    .profile-name{
+        display: none;
+    }
+    .burger-button{
+        display: block;
+    }
+    .sidebar.is-active{
+        left: 0;
+    }
+    .sidebar-container{
+        height: auto;
+        grid-row-gap: 30px;
+    }
+
+    .container{
+        grid-template-columns: 3% 1fr;
+        grid-template-areas: "header header"
+                         ". movies";   
+    }
+
+    .header{
+        grid-template-columns: 8% 18% 1fr 10%;
+        grid-template-areas: ". logo search profile"
+    }    
+
+    .header-logo{
+        grid-area: logo;
+        display: flex;
+        align-items: center;
+    }
+    .header-logo img{
+        height: 40px;
+    }
+    
+    .header-title{
+        font-size: 24px
+    }
+
+    .header-search {
+        width: 70%
+    }
+}
+
+@media screen and (max-width: 480px){
+    .sidebar{
+        left: -100vw;
+        width: 100vw;
+        background: rgba(252, 83, 90, .7);
+    }
+    .container{
+        grid-template-columns: 3% 1fr;
+        grid-template-areas: "header header"
+                         ". movies";   
+    }
+
+    .header{
+        height: 75px;
+    }
+
+    .icon-search{
+        display: block;
+    }
+
+    .movies-container{
+        grid-template-columns: repeat(1, 400px);
+    }
+    
+    .header-search input{
+        display: none;
+    }
+
+    .icon-search{
+        grid-area: icon-search;
+    }
+
+    .header{
+        grid-template-columns: 1fr 40% 10% 15%;
+        grid-template-areas: ". logo icon-search profile";
+        justify-items: normal;
+    }  
+}
+
+@media screen and (max-width: 360px){
+    
+}
